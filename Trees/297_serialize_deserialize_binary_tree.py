@@ -48,7 +48,7 @@ class Codec:
                 res += "None, "
             else: 
                 res += str(root.val) + ", "
-                res = helperSerialize(root.left, res)
+                res = helperSerialize(root.left, res) # each call will return a more complete string
                 res = helperSerialize(root.right, res)
             return res 
         res = helperSerialize(root, "")
