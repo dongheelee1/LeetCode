@@ -27,7 +27,13 @@ Note: Do not use class member/global/static variables to store states. Your seri
 #         self.right = None
 
 class Codec:
-
+    
+    '''
+    Need a helper function in serialize that will return a string. Why? We also want to keep track of the string that we are going to form. 
+    
+    Base Case --> We hit the end of the tree. What do we do? add "None, " to the string 
+    Otherwise, we want to add the root value to the str + ", " and then traverse down the left branch and then the right branch adding node at each level
+    '''
     def serialize(self, root):
         """Encodes a tree to a single string.
         
@@ -48,7 +54,24 @@ class Codec:
         res = helperSerialize(root, "")
         return res[:-2]
 
-  
+    '''
+    IDEA: 
+    
+    Need a helper function in deserialize because we need to pass in a list of nodes and spit back out a tree 
+    
+    Convert the input string into a list by splitting on ", " 
+    
+    Deserialize 
+    The very first element in the list would be the root of the tree ( or subtree ) 
+        unless it is "None" (base case) --> at this, pop the element from the list and return None 
+        
+    Once the first element is added to the trip, pop the element of the index 0
+    Then, recurse...
+        root.left = helperDeserialize(l) 
+        root.right = helperDeserialize(l)
+    After going through each left and right branch, return root 
+    
+    '''
 
     def deserialize(self, data):
         """Decodes your encoded data to tree.
