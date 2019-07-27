@@ -57,6 +57,8 @@ class Solution:
         rows = len(A)
         cols = len(A[0])
         
+        #transpose is a linear map from the space of m × n matrices to the space of all n × m matrices
+        #given an m*n matrix A, we want to make a n*m transpose matrix 
         M = [[None] * (rows) for x in range(cols)] 
         
         for i in range(0, len(M)): 
