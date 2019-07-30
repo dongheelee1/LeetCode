@@ -52,7 +52,7 @@ class Solution:
     DFS (takes in grid, i, j and just sinks any square that is '1') 
     
     sink the square that is 1 (set it to 0)
-    traverse left, right, down, up only if they are within bounds and are equal to 1
+    traverse left, right, down, up only if they are within bounds and are equal to 1 
     
     
     '''
@@ -65,7 +65,7 @@ class Solution:
             for j in range(len(grid[0])): #column 
                 if grid[i][j] == '1': 
                     numberOfIslands += 1 
-                    self.dfs(grid, i, j)
+                    self.dfs(grid, i, j) #this method is used to sink any adjacent squares (left, right, top, down) that are '1' to '0'
         return numberOfIslands 
     
     def dfs(self, grid, i, j): 
