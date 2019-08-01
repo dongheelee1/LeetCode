@@ -14,6 +14,14 @@ Example 2:
 Input: [2,2,1,1,1,2,2]
 Output: 2
 '''
+
+'''
+construct a hashmap consisting of character: count 
+--> for loop going through the string 
+
+go through the hashmap 
+if value (count) of the current key (character) is greater than n/2, return the character 
+'''
 class Solution:
     
     def majorityElement(self, nums: List[int]) -> int:
