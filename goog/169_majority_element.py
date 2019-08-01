@@ -16,11 +16,17 @@ Output: 2
 '''
 
 '''
+IDEA: 
 construct a hashmap consisting of character: count 
 --> for loop going through the string 
 
 go through the hashmap 
 if value (count) of the current key (character) is greater than n/2, return the character 
+
+COMPLEXITY: 
+
+time = O(N) -> hashmap insertion is O(1) and for loop is O(N)
+space = O(N) -> hashmap 
 '''
 class Solution:
     
