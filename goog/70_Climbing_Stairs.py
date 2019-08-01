@@ -14,6 +14,13 @@ DP[1] = 1
 DP[2] = DP[2-1] + DP[2-0] = 2
 DP[3] = DP[3-1] + DP[3-2] = 3 
 
+
+initialize DP array of size (n+1) 
+initialize 
+    DP[0] = 1 
+    DP[1] = 1 
+loop through until i == n, filling in DP array and return DP[n]
+
 complexities: 
 time - O(n) single for loop 
 space - O(n) size of DP array
