@@ -59,7 +59,7 @@ class Solution:
             
 
             
-            if t[j] not in hashmap or hashmap[t[j]] == 0:
+            if t[j] not in hashmap or hashmap[t[j]] == 0: #if current character has never been a character in s or count is 0 
                 return t[j] 
  
             hashmap[t[j]] -= 1
