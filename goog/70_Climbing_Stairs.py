@@ -46,7 +46,7 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         
         
-        DP = [0] * (n+1)
+        DP = [0] * (n+1) #n+1 to account for the 0th index
         
         
         DP[0] = 1
