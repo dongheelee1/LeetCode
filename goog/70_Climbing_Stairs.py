@@ -13,6 +13,10 @@ DP[1] = 1
 
 DP[2] = DP[2-1] + DP[2-0] = 2
 DP[3] = DP[3-1] + DP[3-2] = 3 
+
+complexities: 
+time - O(n) single for loop 
+space - O(n) size of DP array
 '''
 
 '''
