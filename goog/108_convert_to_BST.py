@@ -23,7 +23,23 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
 #         self.val = x
 #         self.left = None
 #         self.right = None
+'''
+IDEA: 
 
+2 functions: 
+- sortedArrayToBST (takes in an int array and spits out a BST of type TreeNode) 
+- createBST (takes in an int array from sortedArrayToBST and spits out a BST of type TreeNod) 
+
+sortedArrayToBST
+- check if int array passed is not None and length != 0 
+- otherwise, call createBST that will return a BST 
+
+createBST 
+- if past the leaves, return None 
+- create root 
+- obtain root.left and root.right using recursion 
+- return root 
+'''
 class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
         
@@ -33,7 +49,7 @@ class Solution:
         
         return self.createBST(nums, 0, len(nums)-1)
     
-    def createBST(self, nums, left, right): 
+    def createBST(self, nums: List[int], left: int, right: int) -> TreeNode 
         
         if left > right: #past the leaf Node 
             return None 
