@@ -21,7 +21,26 @@ Could you do it in one-pass, using only O(1) extra memory and without modifying 
 
 '''
 time complexity - O(mn) 
-space complexity - ?
+space complexity - No auxiliary space 
+
+idea: 
+
+countbattleships method 
+    check to see if it is a valid board 
+
+    if valid board 
+
+    traverse through board
+
+        if 'X' is encountered,
+            increment nums 
+            then, sink the ship (recursive call) 
+        
+sink method 
+    
+    set the current square to '.' 
+    
+    sink left, right, top, down if left, right, top, down are in bounds and the squares are equal to 'X'
 '''
 class Solution:
     
