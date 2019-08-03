@@ -1,3 +1,4 @@
+'''
 419. Battleships in a Board
 
 Given an 2D board, count how many battleships are in it. The battleships are represented with 'X's, empty slots are represented with '.'s. You may assume the following rules:
@@ -16,6 +17,7 @@ XXXX
 This is an invalid board that you will not receive - as battleships will always have a cell separating between them.
 Follow up:
 Could you do it in one-pass, using only O(1) extra memory and without modifying the value of the board?
+'''
 class Solution:
     
     def countBattleships(self, board: List[List[str]]) -> int:
