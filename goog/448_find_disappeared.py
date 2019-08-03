@@ -15,6 +15,15 @@ Input:
 Output:
 [5,6]
 '''
+
+'''
+1. push elements to hashmap (element = key in the hashmap)
+2. go through 1 -> n and check if number exists as key in the hashmap. If not, append to missing 
+3. return missing 
+
+Time complexity - O(N) 
+Space complexity - O(N) 
+'''
 class Solution:
     
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
@@ -24,7 +33,6 @@ class Solution:
         
         #go through the given nums array and add each element as key in numbers_hashmap if it is not alread
         for i in range(len(nums)): 
-            
             if nums[i] not in numbers_hashmap: 
                 numbers_hashmap[nums[i]] = 1
         
