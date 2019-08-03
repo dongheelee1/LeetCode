@@ -39,19 +39,10 @@ class Solution:
                     board[i][j] = '.'
                     number_of_ships += 1
                     self.sink(board, i, j)
-                    if i-1 > 0 and board[i-1][j] == "X": 
-                        self.sink(i-1, j)
-                    if i+1 < len(board) and board[i+1][j] == "X":
-                        self.sink(i+1, j)
-                    if j-1 > 0 and board[i][j-1] == "X":
-                        self.sink(i, j-1)
-                    if j+1 < len(board[0]) and board[i][j+1] == "X":
-                        number_of_ships += self.sink(i, j+1)
+
         return number_of_ships
 
     def sink(self, board, i, j): 
-
-        
 
         board[i][j] = '.'
 
