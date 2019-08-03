@@ -35,7 +35,11 @@ class Solution:
         
         return result 
     
-    
+    #this method is going to return result 
+    #digits = number passed in 
+    #mapping = helps us decode a digit to corresponding string 
+    #current is what we are forming 
+    #index is pointing to current position in current 
     def recursiveLetterCombs(self, result, digits, index, mapping, current):
         
         #if digits is an empty str, return an empty array
@@ -51,7 +55,7 @@ class Solution:
             result.append(current)
             return result
         
-        #get str mapped to digit value
+        #get str mapped to digit char
         map_string = mapping[int(digits[index])]
         
         #for each character in mapped string, get all combinations 
