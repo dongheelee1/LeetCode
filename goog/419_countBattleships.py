@@ -58,9 +58,7 @@ class Solution:
                 
                 #we only care if the current square is "X" 
                 if board[i][j] == 'X': 
-                    
-                    #sink the ship 
-                    board[i][j] = '.'
+
                     number_of_ships += 1
                     self.sink(board, i, j)
 
