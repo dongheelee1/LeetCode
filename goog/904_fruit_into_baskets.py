@@ -45,6 +45,26 @@ Note:
 1 <= tree.length <= 40000
 0 <= tree[i] < tree.length
 '''
+
+
+'''
+idea: 
+
+establish
+1. what i want to return (number of fruits) 
+2. pointer i that moves across the tree and restricts the window on the right side 
+3. counter 
+
+4. go through the tree 
+ a. add the element as key to the counter and increment count 
+ b. while the length of counter is greater than or equal to 3 (more than three types of fruits, so we need to limit to 2) 
+  i. decrement the count at tree[i] #####we want to get rid of leftmost element of the window 
+  ii. if the count is 0, delete the key from counter 
+  iii. move pointer i to the right in the tree
+ c. recalculate the max number of fruits (that must have 2 types of fruits)
+
+
+'''
 class Solution:
     def totalFruit(self, tree: List[int]) -> int:
         
