@@ -33,6 +33,19 @@ All local and domain names are non-empty.
 Local names do not start with a '+' character.
 '''
 
+'''
+IDEA: 
+
+return value = set() 
+
+now go through each email in emails and "clean" 
+
+1. split the email on '@' into local name and domain name 
+2. consider only the local name --> split on '+' and consider only the part before this character 
+3. make a new string of local[0] that will omit '.'
+4. stitch back the new local string and domain name back together 
+5. add to set()
+'''
 
 
 
