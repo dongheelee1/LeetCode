@@ -24,6 +24,13 @@ Example 2:
 Given the above grid, return 0.
 Note: The length of each dimension in the given grid does not exceed 50.
 '''
+'''
+IDEA: 
+traverse the grid 
+when you encounter a 1, sink the adjacent squares that are 1 while determining the area of the ship 
+at each loop, update the max area
+return max
+'''
 class Solution:
      
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
