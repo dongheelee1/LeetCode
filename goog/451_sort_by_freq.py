@@ -46,7 +46,7 @@ class Solution:
         
         get hashmap of the frequency 
         
-        add everything in the hashmap to the maxheap 
+        sort the items of the hashmap by value (freq) and then by key (char) 
         
         build string based off of the maxheap 
         '''
