@@ -59,9 +59,10 @@ class Solution:
             else: 
                 hashmap[char] += 1
                 
-
+        #sort by value descending (by freq) and then by key ascending (alphebatically)
         hashmap = sorted(hashmap.items(), key=lambda t: (-t[1], t[0]))
-        #The negation of x[1] is needed to sort the characters by freq in descending first and sort characters in ascending order
+        #will be something like [('e', 2), ('a', 1), ('b', 1)]
+        
         res = ""
         for item in hashmap: 
             char = item[0]
