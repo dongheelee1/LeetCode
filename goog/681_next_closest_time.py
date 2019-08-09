@@ -25,12 +25,17 @@ class Solution:
         result = None
         for i in range(curr+1, curr+(24*60)+1): #simulate a clock, add minute at every iteration 
             #get military time in minutes version 
-            t = i % 1440 #1440 = 24*60 --> that is a full 360 around the clock
+            t = i % (24*60) #1440 = 24*60 --> that is a full 360 around the clock
             
-            h, m = t // 60, t % 60
+            h, m = t // 60, t % 60 #divide by 60 to get the number of hours (left most), mod by 60 to get the remaining minutes (right most)
+
+            print("h ", h)
+            print("m ", m)
             result = "%02d:%02d" % (h, m)
-            print(set(result))
-            print(set(time))
+
             if set(result) <= set(time):
+                #the next time digits is always going to be smaller than equal to the give time's digit 
+                print(set(result)) # 9, 1, :, 3 (19:33)
+                print(set(time)) # :, 9, 1, 4, 3  (19:34)
                 break
         return result
