@@ -25,6 +25,14 @@ Output: False
 
 Note: The input will be a non-empty word consisting of uppercase and lowercase latin letters.
 '''
+'''
+idea: 
+go through the word letter by letter and increment count of capitals accordingly 
+return the conjunction of 3 conditions 
+1. capitals == len(w) 
+2. w[0].isupper() and capitals == 1 
+3. capitals == 0 
+'''
 class Solution:
     
     def detectCapitalUse(self, word: str) -> bool:
