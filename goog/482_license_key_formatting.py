@@ -30,7 +30,7 @@ String S is non-empty.
 class Solution:
     def licenseKeyFormatting(self, S: str, K: int) -> str:
         
-        S = "".join(S.split("-")).upper() #without dashes
+        S = "".join(S.split("-")).upper() #create a string without dashes and all upper case letters 
         
         i = len(S) - 1 #start from the last character (this is the iterator)
         count = 0
