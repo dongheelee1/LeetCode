@@ -25,7 +25,7 @@ class Solution:
         result = None
         for i in range(curr+1, curr+(24*60)+1): #simulate a clock, add minute at every iteration 
             #get military time in minutes version 
-            t = i % (24*60) #1440 = 24*60 --> that is a full 360 around the clock
+            t = i % (24*60) #1440 = 24*60 --> that is a full 360 around the clock, after 24 hours, we want time to start over and not go over it (i.e. 25:22)
             
             h, m = t // 60, t % 60 #divide by 60 to get the number of hours (left most), mod by 60 to get the remaining minutes (right most)
 
