@@ -71,7 +71,7 @@ class Solution:
         num_fruits = 0 
         i = 0 #pointer that moves right everytime we want to exclude left most element of tree 
         
-        count = collections.Counter()
+        count = collections.Counter() #count keeps track of the tree type and corresponding count as we iterate through the tree 
         
         for idx, elem in enumerate(tree): 
             
