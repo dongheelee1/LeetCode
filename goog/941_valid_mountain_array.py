@@ -39,21 +39,24 @@ class Solution:
         '''
         keep looping if i is within bounds and i+1-st element is greater than i-th element 
         '''
-        if len(A) == 0 or len(A) == 1 or len(A) == 2: 
+        N = len(A)
+        
+
+        if N == 0 or N == 1 or N == 2: 
             return False 
         
         i = 0 
         
-        #walk up the mountain 
-        while i+1 < len(A) and A[i] < A[i+1]: 
+        #walk up the mountain insofar as i+1 is within bounds and elements are montonic increasing 
+        while i+1 < N and A[i] < A[i+1]: 
             i += 1 
         
-        #peak can't be the first or the last 
+        #peak can't be the first or the last indexed element
         if i == 0 or i == len(A)-1: 
             return False 
         
-        #walk down the mountain 
-        while i+1 < len(A) and A[i] > A[i+1]:  
+        #walk down the mountain insofar as i+1 is within bounds and elements are monotonic decreasing 
+        while i+1 < N and A[i] > A[i+1]:  
             i += 1
         
-        return i == len(A) - 1
+        return i == N - 1 
