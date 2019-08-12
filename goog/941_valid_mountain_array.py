@@ -44,15 +44,16 @@ class Solution:
         
         i = 0 
         
-        while i < len(A) and i+1 < len(A) and A[i] <= A[i+1]: 
+        #walk up the mountain 
+        while i+1 < len(A) and A[i] < A[i+1]: 
             i += 1 
-            
-        if i == 0 or i+1 >= len(A): 
+        
+        #peak can't be the first or the last 
+        if i == 0 or i == len(A)-1: 
             return False 
         
-        while i < len(A) and i+1 < len(A): #check if it is decreasing 
-            if A[i] <= A[i+1]: 
-                return False 
+        #walk down the mountain 
+        while i+1 < len(A) and A[i] > A[i+1]:  
             i += 1
-
-        return True
+        
+        return i == len(A) - 1
