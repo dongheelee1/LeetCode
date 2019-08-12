@@ -18,22 +18,23 @@ Explanation:
 class Solution:
     def isHappy(self, n: int) -> bool:
         
-        old = [] #old is used to keep track of sum, if sum is repeated then we have a cycle and know that there is no happy number (a number whose digits squared is equal to 1)   
-        sum = n 
+        seen = [] #old is used to keep track of sum, if sum is repeated then we have a cycle and know that there is no happy number (a number whose digits squared is equal to 1)   
+        number = n 
         while True:
-            s = str(sum)
+            s = str(number)
             sum = 0
             #calculate the squared sum 
             for digit in s:
                 sum += int(digit) ** 2
+                number = sum
                 
             #if the squared sum is equal to 1, then we have our happy number 
             if sum == 1:
                 return True
             
-            #sum is not in old add it to old 
-            if sum not in old:
-                old.append(sum)
+            #if we have never seen the sum before, add it to old 
+            if sum not in seen:
+                seen.append(sum)
             else:
-                #we have encountered the sum in the past so there's a cycle 
+                #we have seen it already so there's a cycle (no happy number)
                 return False
