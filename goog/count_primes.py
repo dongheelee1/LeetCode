@@ -22,22 +22,26 @@ class Solution:
     Time - ??
     Space - O(N)
     '''
+class Solution:
     def countPrimes(self, n: int) -> int:
-        primes = [True for i in range(n)] #initially set all number to be prime
+        
         if n <= 2: 
-            return 0
-        primes[0] = False
-        primes[1] = False
-        primes[2] = True #set 2 to be next prime
-        for i in range(0, n):
-
-            if primes[i] == False: #when current number is not prime 
-                continue
-            else:
-                #when current number is prime, set succeeding multiples of the current number to be False (not prime) 
-                for k in range(2*i, n, i): #set multiples of the next prime to be non-prime
-                    primes[k] = False
-                    
+            return 0 
+        
+        #otherwise, count primes 
+        #create an array of size n+1, assume all numbers up to n are prime
+        arr = [True for i in range(n)]
+        
+        #state the base cases 
+        arr[0] = False 
+        arr[1] = False 
+        arr[2] = True 
+        
+        for i in range(2, n): 
             
-
-        return sum(primes)
+            if arr[i] == True: 
+                
+                #if we encounter a prime, we want to set all multiples of this prime number to not be prime (or false)
+                for j in range(2*i, n, i): 
+                    arr[j] = False 
+        return sum(arr)
