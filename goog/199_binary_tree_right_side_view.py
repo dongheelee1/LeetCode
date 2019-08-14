@@ -38,22 +38,22 @@ class Solution:
         queue.append(root)
         
         #conudct BFS 
-        while len(queue) != 0: 
+        while len(queue) != 0: #while there are nodes to explore in the queue
             
             size = len(queue)
             
-            #iterate through all the nodes in the queue 
-            for i in range(0, size): 
+            for i in range(0, size): #go through each node in the current state of the queue 
                 
-                current = queue.pop(0)
+                current = queue.pop(0) #pop off the first node and explore it 
                 
                 #if we are at the right-most element, add it to the queue 
                 if i == size-1: 
                     visibleValues.append(current.val)
-                #add nodes to explore to the queue 
-                if current.left is not None: 
+                  
+                if current.left is not None: #if there is a left node, then it needs to be explored so add to queue 
                     queue.append(current.left)
-                if current.right is not None: 
+                     
+                if current.right is not None: #if there is a right node, then it needs to be explored so add to queue 
                     queue.append(current.right)
                     
         return visibleValues
