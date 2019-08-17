@@ -26,7 +26,7 @@ class Solution:
             #calculate the squared sum 
             for digit in s:
                 sum += int(digit) ** 2
-                number = sum
+            number = sum
                 
             #if the squared sum is equal to 1, then we have our happy number 
             if sum == 1:
