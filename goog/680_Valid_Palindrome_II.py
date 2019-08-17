@@ -30,7 +30,7 @@ class Solution:
             i += 1 
             j -= 1
         
-        return True
+        return True #at this point, the given string is a perfect palindrome 
 
         
     def checkPalindrome(self, s, i, j): 
