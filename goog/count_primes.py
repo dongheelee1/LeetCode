@@ -25,7 +25,7 @@ class Solution:
 class Solution:
     def countPrimes(self, n: int) -> int:
         
-        if n <= 2: 
+        if n <= 2: #the question asks number of prime numbers LESS THAN n 
             return 0 
         
         #otherwise, count primes 
