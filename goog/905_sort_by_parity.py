@@ -23,7 +23,7 @@ Note:
 class Solution:
     
     def sortArrayByParity(self, A: List[int]) -> List[int]:
-        index = 0 
+        index = 0 #points to the index right after current most even element 
         for i in range(len(A)): #go through array 
             #if the current element is even 
                 #then do something 
