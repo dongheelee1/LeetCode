@@ -27,10 +27,10 @@ class Solution:
         
         #HINT: The problem says "ordered from top to bottom". This means we have to use a BFS 
         
-        visibleValues = []
+        visible = []
         
         if root is None: 
-            return visibleValues 
+            return visible 
         
         #if tree exists, conduct a BFS 
         
@@ -48,12 +48,12 @@ class Solution:
                 
                 #if we are at the right-most element, add it to the queue 
                 if i == size-1: 
-                    visibleValues.append(current.val)
+                    visible.append(current.val)
                   
-                if current.left is not None: #if there is a left node, then it needs to be explored so add to queue 
+                if current.left: #if there is a left node, then it needs to be explored so add to queue 
                     queue.append(current.left)
                      
-                if current.right is not None: #if there is a right node, then it needs to be explored so add to queue 
+                if current.right: #if there is a right node, then it needs to be explored so add to queue 
                     queue.append(current.right)
                     
         return visibleValues
