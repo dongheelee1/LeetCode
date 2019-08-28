@@ -34,8 +34,9 @@ class Solution(object):
         :rtype: bool
         """
         
-        if root is None: 
+        if root is None: #if input is [], 0 --> return False 
             return False 
+        
         sum -= root.val 
         if root.left is None and root.right is None: 
             
