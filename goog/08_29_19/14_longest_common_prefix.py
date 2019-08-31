@@ -34,12 +34,13 @@ class Solution(object):
         
         longest_common_prefix = strs[0]
         for  i in range(1, len(strs)): 
-            
+            #go through every other str after the first and compare every character (increment j) 
             j = 0 
             current_str = strs[i]
             
             while j < len(current_str) and j < len(longest_common_prefix) and current_str[j] == longest_common_prefix[j]: 
                 j += 1 
-                
+            
+            #update longest common prefix 
             longest_common_prefix = current_str[:j]
         return longest_common_prefix
