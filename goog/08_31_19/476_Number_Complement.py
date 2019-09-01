@@ -34,7 +34,7 @@ class Solution(object):
         print("num: ", num)
 
         print("***************")
-        while num > 0:
+        while num > 0: #chip off bit by bit in num from right to left 
             '''
             idea is that we want to  go through bit by bit from right to left
             each bit we want to focus on is given by num % 2....the right most digit
