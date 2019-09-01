@@ -25,7 +25,10 @@ class Solution(object):
         :type S: str
         :rtype: int
         """
-        
+        '''
+        question: 
+        you are given jewels and stones. identify how many jewels are in stones. 
+        '''
         jewels = set()
         
         for jewel in J: 
