@@ -53,13 +53,17 @@ class Solution(object):
             '''
             print(bin(num))
             print(bin(num%2))
+            #get the last bit --> num%2 gives whatever the remainder is, 0 if even num or 1 if odd num 
+            #xor the last bit by 1 to get the complement of the bit --> 0 ^ 1 = 1, 1 ^ 1 = 1
+            #multiply by the power and add to result to get the current decimal value
+            
             result += (num % 2 ^ 1) * power  #10 ^ 1 => 10*2
             print("result: ", result)
             
             #keep track of the power
             power <<= 1 # A single left shift multiplies a binary number by 2
             print("power", power)
-            num >>= 1 #divides a number by 2, throwing out any remainders
+            num >>= 1 #divides a number by 2, throwing out any remainders/last bit 
             print("num", num)
             print("***************")
             
