@@ -17,12 +17,14 @@ class Solution:
         
         hash = {}
         
+        #get a char: frequency for the string s 
         for char in s: 
             if char not in hash: 
                 hash[char] = 1 
             else: 
                 hash[char] += 1
         
+        #go through the string s and return 
         for idx, value in enumerate(s): 
             if hash[value] == 1: 
                 return idx
