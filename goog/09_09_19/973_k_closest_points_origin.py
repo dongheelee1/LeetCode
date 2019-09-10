@@ -33,7 +33,11 @@ Note:
 sort solution 
 '''
 
-
+'''
+go through the list of points 
+ calculate the euclidian distance 
+ 
+'''
 class Solution(object):
     def kClosest(self, points, K):
         import heapq
@@ -43,9 +47,15 @@ class Solution(object):
             #get the euc distance 
             dist = -(x*x + y*y)
             
-            #python heap is a min heap, we want to keep pushing distance to the heap with greatest distance at root until size is less than k and if it is already at the k size, we want to keep pushing the distance 
+            #python heap is originally a min heap keeping the smallest value at the root,
+            #we want to convert this min heap to a max heap so that we are popping off the farthest points in the case that size of the heap goes over k
+            
+            
             if len(heap) == K:
+                #this first pushes the (dist, p) to the heap 
+                #it then pops the largest distance off the heap 
                 heapq.heappushpop(heap, (dist, p))
             else:
+                #otherwise, if the heap size is smaller, then we want to just heappush to the heap 
                 heapq.heappush(heap, (dist, p))
         return [p for (dist, p) in heap]
